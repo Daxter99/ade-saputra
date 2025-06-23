@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    background-color: #000000;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Untuk scrolling yang halus antar section */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 1000;
+}
+
+.header-logo {
+    height: 100px; /* Sesuaikan tinggi logo sesuai keinginan Anda */
+    width: auto; /* Mempertahankan rasio aspek gambar */
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+
+/* Fullscreen Sections */
+.fullscreen-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start;  Ini menyebabkan konten tidak rata tengah secara horizontal */
+    padding-left: 10%;
+    padding-right: 10%; /* Tambahkan padding kanan untuk perataan yang lebih baik */
+    box-sizing: border-box;
+    background: linear-gradient(to right, #000000, #000000 70%, rgba(0,0,0,0) 100%);
+    background-image: radial-gradient(circle at 80% 50%, rgba(135, 206, 235, 0.1) 0%, transparent 50%),
+                      linear-gradient(to right, #000000, #000000 70%, rgba(0,0,0,0.5) 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+.content-wrapper {
+    max-width: 80%; /* Tingkatkan lebar maksimum agar konten tidak terlalu sempit */
+    margin-right: auto; /* Memastikan konten rata kiri dalam area padding */
+}
+
+.section-title {
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+    text-align: left; /* Pastikan rata kiri */
+}
+
+.fullscreen-section h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: left; /* Pastikan rata kiri */
+}
+
+.fullscreen-section .subtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #CCCCCC;
+    text-align: left; /* Pastikan rata kiri */
+}
+
+.footer-note {
+    position: absolute;
+    bottom: 30px;
+    left: 10%;
+    font-size: 0.9em;
+    color: #888888;
+    text-align: left; /* Pastikan rata kiri */
+    width: calc(100% - 20%); /* Sesuaikan lebar agar tidak melebihi batas padding */
+}
+
+/* Portfolio Section Specifics */
+.portfolio-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Lebar penuh dalam content-wrapper */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.portfolio-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    padding: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    text-align: left; /* Pastikan rata kiri di dalam kartu */
+}
+
+.portfolio-card h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.crypto-icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.crypto-icons .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #000;
+}
+
+.crypto-icons .bitcoin {
+    background-color: #F7931A;
+}
+
+.crypto-icons .btc {
+    background-color: #F7931A;
+    border-radius: 4px;
+    width: auto;
+    padding: 0 8px;
+}
+
+.crypto-icons .hype {
+    background-color: #0bf0a7;
+    border-radius: 4px;
+    width: auto;
+    padding: 0 8px;
+}
+
+.venture-logos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.venture-logos img {
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(2);
+}
+
+/* ANIMATION STYLES */
+/* Initial state (hidden) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Untuk efek fade-in-up */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Delay classes */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; } /* Tambahkan jika perlu delay lebih panjang */
+
+/* Final state (visible) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsiveness (Basic) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    .fullscreen-section {
+        padding-left: 5%;
+        padding-right: 5%; /* Sesuaikan padding kanan */
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+
+    .content-wrapper {
+        max-width: 100%; /* Ambil lebar penuh */
+        margin-right: 0;
+    }
+
+    .fullscreen-section h1 {
+        font-size: 2.5em;
+    }
+
+    .fullscreen-section .subtitle {
+        font-size: 1.2em;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-note {
+        left: 5%;
+        bottom: 20px;
+        width: calc(100% - 10%); /* Sesuaikan lebar */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin-left: 10px;
+    }
+    nav ul li a {
+        font-size: 0.8em;
+    }
+
+    .fullscreen-section h1 {
+        font-size: 2em;
+    }
+    .fullscreen-section .subtitle {
+        font-size: 1em;
+    }
+
+    .portfolio-card h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Aurora Background */
+.aurora-container {
+  position: fixed; /* Menutupi seluruh layar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Menempatkan di belakang konten lain */
+  background: linear-gradient(45deg, #00BCD4, #9C27B0, #3F51B5, #E91E63, #00BCD4);
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite; /* Animasi yang berjalan terus menerus */
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pastikan konten utama Anda tetap terlihat */
+body {
+  background-color: #000000; /* Atau warna latar belakang yang sesuai */
+  color: white; /* Warna teks agar kontras dengan latar belakang */
+  font-family: sans-serif; /* Contoh font */
+  margin: 0;
+  padding: 0;
+}
+
+.fullscreen-section { /* Atau kelas yang menampung konten Anda */
+  position: relative; /* Penting agar z-index berfungsi dengan benar */
+  z-index: 1; /* Menempatkan konten di atas latar belakang aurora */
+  /* ... gaya lain untuk bagian Anda ... */
+}
